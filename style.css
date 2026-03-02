@@ -1,0 +1,185 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 20px;
+    background-color: rgb(0, 0, 0);
+}
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+h2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+p{
+    line-height: 1.6;
+    color: rgb(247, 247, 247);
+}
+img{
+    width: 350px;
+    height: 300px;
+    text-align: center;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.email{
+    font-size: small;
+}
+.fin {
+    background-color: #4CAF50;
+    border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.dev{
+    background-color: #544caf;
+    border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.proj{
+    background-color: #e65218;
+    border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.pub{
+    background-color: #451bf0;
+    border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.cont{
+    background-color: #f01b65;
+    border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.fin_body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 20px;
+    background-color: rgb(0, 0, 0);	
+}
+
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #656568, #7b5cff);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Card */
+.contact-card {
+    background: rgb(255, 255, 255);
+    color: #020202;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+.contact-card h1 {
+	color: #000;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.contact-subtext {
+    margin-bottom: 1.8rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Form layout */
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-card label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Inputs */
+.contact-card input,
+.contact-card textarea {
+    margin-top: 0.4rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+/* Focus states */
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    border-color: #5f3cff;
+}
+
+/* Button */
+.contact-card button {
+    margin-top: 0.5rem;
+    padding: 0.7rem;
+    background: #2e13a5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.contact-card button:hover {
+    background: #3e2ab3;
+}

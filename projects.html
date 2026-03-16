@@ -3,17 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projects — Pratyush</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body class="fin_body">
-    <h1>
-        Projects 
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
 
-    </h1>
-    <img src="dev.jfif" alt="dev" class="center">
-    <p>
-       
-   <iframe src="https://github.com/pratyush400/pattern_2d.md" width="100%" height="400px"></iframe>
+        .repo-card {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.2rem;
+            background: #161616;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .repo-card:hover { border-color: #c8a96e; }
+
+        .repo-card a {
+            color: #c8a96e;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .repo-card a:hover { text-decoration: underline; }
+
+        .repo-desc {
+            color: #aaa;
+            font-size: 0.85rem;
+            flex-grow: 1;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #666;
+            font-family: monospace;
+        }
+
+        .repo-lang::before { content: '◆ '; }
+
+        #loading { color: #888; text-align: center; margin: 3rem 0; }
+        #error   { color: #e06c75; text-align: center; margin: 3rem 0; }
+    </style>
+</head>
+<body>
+    <main style="max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem;">
+        <h1>Projects</h1>
+        <p style="color: #888; font-family: monospace; font-size: 0.85rem;">
+            pulled live from <a href="https://github.com/pratyush400" style="color: #c8a96e;">github.com/pratyush400</a>
+        </p>
+
+        <div id="loading">Loading repos...</div>
+        <div id="error" style="display:none">Couldn't load repos. <a href="https://github.com/pratyush400">View on GitHub →</a></div>
+        <div class="projects-grid" id="grid"></div>
+    </main>
+
+    <script>
+        async function loadRepos() {
+            try {
+                const res = await fetch('https://api.github.com/users/pratyush400/repos?sort=updated&per_page=20');
+                if (!res.ok) throw new Error();
+                const repos = await res.json();
+
+                document.getElementById('loading').style.display = 'none';
+                const grid = document.getElementById('grid');
+
+                repos
+                    .filter(r => !r.fork) // hide forks, remove this line if you want them
+                    .forEach(repo => {
+                        grid.innerHTML += `
+                            <div class="repo-card">
+                                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                                <p class="repo-desc">${repo.description || 'No description yet.'}</p>
+                                <div class="repo-meta">
+                                    ${repo.language ? `<span class="repo-lang">${repo.language}</span>` : ''}
+                                    <span>★ ${repo.stargazers_count}</span>
+                                    <span>Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
+                                </div>
+                            </div>`;
+                    });
+            } catch {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        loadRepos();
+    </script>
 </body>
 </html>

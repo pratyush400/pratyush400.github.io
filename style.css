@@ -1,0 +1,93 @@
+:root {
+    --bg: #0f0f0f;
+    --text: #e8e6e1;
+    --muted: #888;
+    --accent: #c8a96e; /* warm gold — one accent, used sparingly */
+    --max-width: 600px;
+    --font-body: 'EB Garamond', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    padding: 4rem 1.5rem 6rem;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Avatar */
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1.5rem;
+    filter: grayscale(20%);
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+}
+
+/* Tagline */
+.tagline {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+}
+
+.tagline a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.tagline a:hover { text-decoration: underline; }
+
+/* Bio */
+.bio {
+    color: var(--text);
+    margin-bottom: 3rem;
+    max-width: 52ch;
+}
+
+/* Nav links — plain text list, no buttons */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0;
+    flex-direction: column;
+}
+
+.links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    transition: color 0.15s ease;
+    letter-spacing: 0.03em;
+}
+
+.links a::before {
+    content: '→ ';
+    color: var(--accent);
+}
+
+.links a:hover { color: #fff; }

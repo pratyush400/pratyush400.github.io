@@ -3,30 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratyush — Math & CS</title>
+    <title>Pratyush — System Science</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); color: white; }
+  .site { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .avatar-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: #C0DD97; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 18px; color: #27500A; flex-shrink: 0; }
+  .name-block h1 { font-size: 22px; font-weight: 500; line-height: 1.2; }
+  .name-block p { font-size: 14px; color: white; margin-top: 2px; }
+  .headline { font-size: 17px; line-height: 1.65; margin-bottom: 0.75rem; color: var(--color-text-primary); }
+  .headline strong { font-weight: 500; }
+  .subline { font-size: 14px; color: white; line-height: 1.6; margin-bottom: 1.5rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem; }
+  .badge { font-size: 12px; padding: 4px 10px; border-radius: 20px; font-weight: 400; }
+  .badge-green { background: #EAF3DE; color: #3B6D11; }
+  .badge-blue { background: #E6F1FB; color: #185FA5; }
+  .badge-purple { background: #EEEDFE; color: #534AB7; }
+  .badge-amber { background: #FAEEDA; color: #854F0B; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 0.75rem; font-weight: 500; }
+  .links-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem; }
+  .link-btn { font-size: 13px; padding: 6px 14px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: var(--color-background-primary); color: var(--color-text-primary); text-decoration: none; cursor: pointer; transition: background 0.15s; }
+  .link-btn:hover { background: var(--color-background-secondary); }
+  .link-btn.primary { background: var(--color-text-primary); color: var(--color-background-primary); border-color: transparent; }
+  .link-btn.primary:hover { opacity: 0.85; }
+  .project-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+  .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+  .project-name { font-size: 15px; font-weight: 500; }
+  .project-tag { font-size: 11px; padding: 3px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .project-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 8px; }
+  .project-links { display: flex; gap: 10px; }
+  .project-links a { font-size: 12px; color: var(--color-text-info, #185FA5); text-decoration: none; }
+  .project-links a:hover { text-decoration: underline; }
+  .stat-pill { font-size: 12px; color: var(--color-text-secondary); background: var(--color-background-secondary); border-radius: 20px; padding: 2px 8px; display: inline-block; margin-top: 4px; }
+  .social-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0.25rem; }
+  .social-row a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; }
+  .social-row a:hover { color: var(--color-text-primary); }
+  .appstore-row { display: flex; align-items: center; gap: 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.875rem 1.25rem; margin-top: 0; }
+  .app-icon { width: 44px; height: 44px; border-radius: 10px; background: #C0DD97; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .app-info { flex: 1; }
+  .app-info p { font-size: 14px; font-weight: 500; }
+  .app-info span { font-size: 12px; color: var(--color-text-secondary); }
+  .dl-btn { font-size: 12px; padding: 6px 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: var(--color-background-primary); color: var(--color-text-primary); text-decoration: none; white-space: nowrap; }
+</style>
+
 </head>
 <body>
-    <main>
-        <header>
-            <img src="DSC_4474.jpg" alt="Pratyush" class="avatar">
-            <h1>Hi, I'm Pratyush.</h1>
-            <p class="tagline">Math & CS · Engineering track · <a href="mailto:pratyushj@lclark.edu">pratyushj@lclark.edu</a></p>
-        </header>
+    
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">Pratyush's portfolio</h2>
 
-        <p class="bio">
-            I'm a Math & CS major on the Engineering track. I build apps, create data visualizations, and study model behavior. Deeply interested in the overlap between theory and systems.
-        </p>
+<div class="site">
+  <div class="avatar-row">
+    <img class="avatar" src="profile.jpg" alt=""> </img>
+    <div class="name-block">
+      <h1>Pratyush Jha</h1>
+      <p>Incoming WashU Transfer · Rising Junior · </p>
+    </div>
+  </div>
 
-        <nav class="links">
-            <a href="finres.html">Finance Resume</a>
-            <a href="devres.html">Dev Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="pub.html">Publications</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </main>
+  <p class="headline">
+    I build <strong>production software</strong> and study the math behind it —<br>
+    from shipped iOS apps to ML interpretability research.
+  </p>
+  <p class="subline">
+    Currently looking for SWE/Financial engineering internships and quant/finance roles for Summer 2026.<br>
+    Open to research positions in ML systems.
+  </p>
+
+  <div class="badges">
+    <span class="badge badge-green">iOS · React · Python</span>
+    <span class="badge badge-blue">Machine Learning</span>
+    <span class="badge badge-purple">Quantitative Finance</span>
+    <span class="badge badge-amber">Math Research</span>
+  </div>
+
+  <div class="links-row">
+    <a href="devres.html" class="link-btn primary">Dev resume</a>
+    <a href="finres.html" class="link-btn">Finance resume</a>
+    <a href="projects.html" class="link-btn">Projects</a>
+    <a href="pub.html" class="link-btn">Publications</a>
+    <a href="mailto:pratyushj@lclark.edu" class="link-btn">pratyushj@lclark.edu</a>
+  </div>
+
+  <hr class="divider">
+
+  <p class="section-label">Featured project</p>
+
+  <div class="appstore-row">
+    <div class="app-icon"> <img src="logo_dorm.png" width="50" height="50" alt="Dormify"></div>
+    <div class="app-info">
+      <p>Dormify</p>
+      <span>Social marketplace for college students · Live on App Store</span>
+    </div>
+    <a href="https://apps.apple.com/us/app/dormify-now/id6760570540" class="dl-btn">Download ↗</a>
+  </div>
+
+    <div class="appstore-row">
+    <div class="app-icon"> <img src="pi.png" width="50" height="50" alt="Dormify"></div>
+    <div class="app-info">
+      <p>Custom AArch64 kernel booting on real RPi4 hardware
+ </p>
+      <span> To run a fine-tuned LLM that is compiled and ready</span>
+    </div>
+    <a href="https://github.com/pratyush400/MyKernel" class="dl-btn">Checkout ↗</a>
+  </div>
+
+  <hr class="divider">
+
+  <p class="section-label">Other work</p>
+
+  <div class="project-card">
+    <div class="project-top">
+      <span class="project-name">Project name here</span>
+      <span class="project-tag badge-blue badge">Weather Derivative Pricing Model</span>
+    </div>
+    <p class="project-desc"></p>
+    <div class="project-links">
+      <a href="https://github.com/pratyush400/Weather_Pricing_Model/blob/main/project.ipynb">GitHub →</a>
+    </div>
+  </div>
+<!-- 
+  <div class="project-card">
+    <div class="project-top">
+      <span class="project-name">Data visualization / finance project</span>
+      <span class="project-tag badge-purple badge">Quant / Finance</span>
+    </div>
+    <p class="project-desc">Something that bridges your CS and finance interest. Even a well-done class project with solid methodology works here.</p>
+    <div class="project-links">
+      <a href="#">GitHub →</a>
+    </div>
+  </div> -->
+
+  <hr class="divider">
+
+  <p class="section-label">Find me</p>
+  <div class="social-row">
+    <a href="https://github.com/pratyush400/">GitHub</a>
+    <a href="https://linkedin.com/in/pratyushjha">LinkedIn</a>
+    <a href="#">Google Scholar</a>
+  </div>
+</div>
+
 </body>
 </html>
